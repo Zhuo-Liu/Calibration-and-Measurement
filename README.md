@@ -11,7 +11,7 @@ Transform.py is written to find out mm-pixel ratio using **OpenCV Chessboard cal
   1. averaging mm per pixel
   2. deviation of mm/pixel
 
-An example for using this is **test.py**, where 10 images of OpenCV Chessboard calibration plate are used to determine the pixel_per_mm.
+An example for using this subroutine is **test.py**, where 10 images of OpenCV Chessboard calibration plates are used to determine the pixel_per_mm.
 
 
 Please note that :
