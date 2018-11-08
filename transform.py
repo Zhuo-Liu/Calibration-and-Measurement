@@ -34,7 +34,13 @@ def transform(length,rows,cols,img):
     if ret == True:
         # find subpixel corners, the size of the searching window may need modifications!!!
         corners2 = cv2.cornerSubPix(gray, corners, (15,15),(-1,-1),criteria)
+
+        if len(corners2) != m*n:
+            print("Error: corners are not all correctly found!")
+            exit(1)
         
+        # uncommet below part to enable manual check
+        '''
         # draw the corners on the image
         image = cv2.drawChessboardCorners(img, (m,n), corners2,ret)
         image_resized = cv2.resize(image,(1184, 854))
@@ -55,6 +61,7 @@ def transform(length,rows,cols,img):
             print("Program exits manually.")
             exit(0)
         cv2.destroyAllWindows()
+        '''
 
         # find pixel distance between neighbour corners
         for i in range(m):
